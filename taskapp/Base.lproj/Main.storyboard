@@ -81,7 +81,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9d-gM-elQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9d-gM-elQ">
                                 <rect key="frame" x="10" y="98" width="394" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -92,47 +92,64 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaK-Go-vLg">
-                                <rect key="frame" x="10" y="173" width="394" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaK-Go-vLg">
+                                <rect key="frame" x="10" y="334" width="394" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hEd-HM-1la">
-                                <rect key="frame" x="10" y="204" width="394" height="120"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ここに内容を入力" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hEd-HM-1la">
+                                <rect key="frame" x="10" y="365" width="394" height="120"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="6gr-Y2-eyl"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pCa-Ol-bUs">
-                                <rect key="frame" x="0.0" y="334" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="495" width="414" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="ibA-IX-D9f"/>
                                 </constraints>
                             </datePicker>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3UM-Jk-cd5">
+                                <rect key="frame" x="0.0" y="204" width="414" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="hhs-1T-Ctd"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgr-wm-zZX">
+                                <rect key="frame" x="10" y="173" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="3UM-Jk-cd5" firstAttribute="leading" secondItem="lpO-Vq-pDE" secondAttribute="leading" id="49v-D4-NpK"/>
                             <constraint firstItem="Ch0-HK-6Y9" firstAttribute="top" secondItem="p9d-gM-elQ" secondAttribute="bottom" constant="10" id="7XK-S4-WDY"/>
                             <constraint firstItem="Ch0-HK-6Y9" firstAttribute="leading" secondItem="lpO-Vq-pDE" secondAttribute="leading" constant="10" id="DaQ-lH-OTl"/>
                             <constraint firstItem="lpO-Vq-pDE" firstAttribute="trailing" secondItem="hEd-HM-1la" secondAttribute="trailing" constant="10" id="IPA-gh-J4d"/>
+                            <constraint firstItem="KaK-Go-vLg" firstAttribute="top" secondItem="3UM-Jk-cd5" secondAttribute="bottom" constant="10" id="Ivi-5u-leU"/>
                             <constraint firstItem="pCa-Ol-bUs" firstAttribute="trailing" secondItem="lpO-Vq-pDE" secondAttribute="trailing" id="LS5-4C-SHo"/>
                             <constraint firstItem="lpO-Vq-pDE" firstAttribute="trailing" secondItem="p9d-gM-elQ" secondAttribute="trailing" constant="10" id="PJE-6i-HZ0"/>
+                            <constraint firstItem="lpO-Vq-pDE" firstAttribute="trailing" secondItem="bgr-wm-zZX" secondAttribute="trailing" constant="10" id="RIw-db-XiJ"/>
                             <constraint firstItem="p9d-gM-elQ" firstAttribute="top" secondItem="lpO-Vq-pDE" secondAttribute="top" constant="10" id="Rxt-69-bWn"/>
                             <constraint firstItem="lpO-Vq-pDE" firstAttribute="trailing" secondItem="Ch0-HK-6Y9" secondAttribute="trailing" constant="10" id="WDg-9m-6hg"/>
+                            <constraint firstItem="bgr-wm-zZX" firstAttribute="leading" secondItem="lpO-Vq-pDE" secondAttribute="leading" constant="10" id="Yrj-Tk-Quj"/>
+                            <constraint firstItem="3UM-Jk-cd5" firstAttribute="trailing" secondItem="lpO-Vq-pDE" secondAttribute="trailing" id="amt-BM-lTj"/>
                             <constraint firstItem="pCa-Ol-bUs" firstAttribute="top" secondItem="hEd-HM-1la" secondAttribute="bottom" constant="10" id="bKb-Lx-Rcq"/>
+                            <constraint firstItem="bgr-wm-zZX" firstAttribute="top" secondItem="Ch0-HK-6Y9" secondAttribute="bottom" constant="10" id="db0-i4-hB7"/>
                             <constraint firstItem="lpO-Vq-pDE" firstAttribute="trailing" secondItem="KaK-Go-vLg" secondAttribute="trailing" constant="10" id="ltW-Yw-3g7"/>
                             <constraint firstItem="p9d-gM-elQ" firstAttribute="leading" secondItem="lpO-Vq-pDE" secondAttribute="leading" constant="10" id="oWc-7e-zIX"/>
                             <constraint firstItem="hEd-HM-1la" firstAttribute="leading" secondItem="lpO-Vq-pDE" secondAttribute="leading" constant="10" id="qb9-nD-i7h"/>
                             <constraint firstItem="hEd-HM-1la" firstAttribute="top" secondItem="KaK-Go-vLg" secondAttribute="bottom" constant="10" id="sYy-FI-U0f"/>
                             <constraint firstItem="pCa-Ol-bUs" firstAttribute="leading" secondItem="lpO-Vq-pDE" secondAttribute="leading" id="unT-OH-6vj"/>
                             <constraint firstItem="KaK-Go-vLg" firstAttribute="leading" secondItem="lpO-Vq-pDE" secondAttribute="leading" constant="10" id="vsD-ER-rg6"/>
-                            <constraint firstItem="KaK-Go-vLg" firstAttribute="top" secondItem="Ch0-HK-6Y9" secondAttribute="bottom" constant="10" id="yez-Bb-0Ge"/>
+                            <constraint firstItem="3UM-Jk-cd5" firstAttribute="top" secondItem="bgr-wm-zZX" secondAttribute="bottom" constant="10" id="vyI-LT-Zqz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lpO-Vq-pDE"/>
                     </view>
@@ -140,6 +157,7 @@
                     <connections>
                         <outlet property="contentsTextView" destination="hEd-HM-1la" id="TtW-ig-5ks"/>
                         <outlet property="datePicker" destination="pCa-Ol-bUs" id="5oa-Yc-vTQ"/>
+                        <outlet property="pickerView" destination="3UM-Jk-cd5" id="wxh-pw-vox"/>
                         <outlet property="titleTextField" destination="Ch0-HK-6Y9" id="t1O-Xg-xc7"/>
                     </connections>
                 </viewController>
