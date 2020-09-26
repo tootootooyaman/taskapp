@@ -10,9 +10,29 @@ import UIKit
 import RealmSwift
 import UserNotifications
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var search: UISearchBar!
+    
+     var task: Task!
+    //虫眼鏡マーク
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+    }
+    //検索バーに入力があった時呼ばれるメソッド
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            taskArray = realm.objects(Task.self).sorted(byKeyPath: "date", ascending: true)
+            tableView.reloadData()
+            return
+        }
+        let predicate = NSPredicate(format: "category CONTAINS[c] %@", searchText)
+        taskArray = realm.objects(Task.self).filter(predicate)
+        
+        tableView.reloadData()
+    }
+    
+    
     
     //Realmインスタンスを取得する
     let realm = try! Realm()
@@ -21,12 +41,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // 日付の近い順でソート：昇順
     // 以降内容をアップデートするとリスト内は自動的に更新される。
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
+    var searchArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        search.delegate = self
     }
 
     //データの数(=セルの数)を返すメソッド
@@ -47,7 +70,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         formatter.dateFormat = "yyyy-MM-dd HH:mm"
         
         let dateString: String = formatter.string(from: task.date)
-        cell.detailTextLabel?.text = dateString
+        cell.detailTextLabel?.text = dateString + task.category
         //--------------------------
         
         return cell
