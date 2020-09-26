@@ -10,17 +10,17 @@ import UIKit
 import RealmSwift
 import UserNotifications
 
-class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class InputViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentsTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var pickerView: UIPickerView!
     
+    //Realmインスタンスを取得する
     let realm = try! Realm()
-    var task: Task!
-    //var category: Category!
     
+    var task: Task!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,9 +31,7 @@ class InputViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         titleTextField.text = task.title
         contentsTextView.text = task.contents
         datePicker.date = task.date
-        
-        pickerView.delegate = self
-        pickerView.dataSource = self
+    
     }
     
     override func viewWillDisappear(_ animated: Bool) {
